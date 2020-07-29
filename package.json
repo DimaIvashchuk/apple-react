@@ -1,7 +1,6 @@
 {
   "name": "web-with-react",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -28,5 +27,14 @@
   "devDependencies": {
     "concurrently": "^5.2.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaIvashchuk/apple-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DimaIvashchuk/apple-react/issues"
+  },
+  "homepage": "https://github.com/DimaIvashchuk/apple-react#readme",
+  "description": ""
 }
