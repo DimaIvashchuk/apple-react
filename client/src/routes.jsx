@@ -1,21 +1,26 @@
 import React from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
 import {Auth} from './auth/auth'
-import {Loyaut} from './loyaut/loyaut'
+import {Loyaut} from './layout/layout'
 
-export const useRoutes = isAuthenticate => {
-    if(isAuthenticate) {
-        return (
-            <Loyaut />
+export const useRoutes = (goToSign, signHandler) => {
+    console.log(goToSign + "a")
+    if(!goToSign) {
+        return  (
+            <Switch>
+                <Loyaut signHandler={signHandler}/>
+                <Redirect to="/home" />
+            </Switch>
+            
         )
     }
 
     return (
         <Switch>
-            <Route path="/">
+            <Route path="/auth">
                 <Auth />
             </Route>
-            <Redirect to="/"/>
+            <Redirect to="/auth"/>
         </Switch>
     )
 }
