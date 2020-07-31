@@ -2,7 +2,7 @@ const {Router} = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
-const {check, validationResault} = require('express-validator')
+const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
 const router = Router()
 
@@ -16,10 +16,11 @@ router.post(
     ],
     async (req, res) => {
     try {
-        const errors = validationResault(req)
+        const errors = validationResult(req)
 
         if(!errors.isEmpty()){
-            req.status(400).json({
+            
+            return res.status(400).json({
                 errors: errors.array(),
                 message: "Bad data while register"
             })
@@ -47,8 +48,6 @@ router.post(
 
 })
 
-
-
 // /api/auth/login
 router.post(
     '/login',
@@ -59,7 +58,9 @@ router.post(
     async (req, res) => {
     try {
 
-        const errors = validationResault(req)
+        const errors = validationResult(req)
+
+        
 
         if(!errors.isEmpty()){
             req.status(400).json({
@@ -69,6 +70,7 @@ router.post(
         }
 
         const {email, password} = req.body
+        
 
         const user = await User.findOne({ email })
 
@@ -91,6 +93,7 @@ router.post(
         res.json({ token, userId: user.id })
         
     } catch (error) {
+        console.log(error)
         res.status(500).json({message: "something went wrong while log in"})
     }
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Home = props => {
+export const Home = () => {
 
     return(
-        <div onClick={props.signHandler}>Home</div>
+        <div>Home</div>
     )
 }
