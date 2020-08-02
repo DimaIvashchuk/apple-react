@@ -38,14 +38,12 @@ router.post(
         const user = new User({ email, password: hashedPassword })
 
         await user.save()
-
+        
         res.status(201).json({ message: "user created" })
-
         
     } catch (error) {
         res.status(500).json({message: "something went wrong while register"})
     }
-
 })
 
 // /api/auth/login
@@ -60,8 +58,6 @@ router.post(
 
         const errors = validationResult(req)
 
-        
-
         if(!errors.isEmpty()){
             req.status(400).json({
                 errors: errors.array(),
@@ -70,7 +66,6 @@ router.post(
         }
 
         const {email, password} = req.body
-        
 
         const user = await User.findOne({ email })
 
@@ -89,14 +84,13 @@ router.post(
             config.get('jwtSecret'),
             { expiresIn: '1h' }
         )
-
+        
         res.json({ token, userId: user.id })
         
     } catch (error) {
         console.log(error)
         res.status(500).json({message: "something went wrong while log in"})
     }
-
 })
 
 module.exports = router
