@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 
 import './header.scss'
@@ -72,3 +73,17 @@ export const Header = () => {
         </div>
     )
 }
+=======
+import React from 'react'
+
+import './header.scss'
+
+
+export const Header = () => {
+    return (
+        <header>
+            
+        </header>
+    )
+}
+>>>>>>> e8d21ff40bb39a7f226d1db37ba870367b68685c
