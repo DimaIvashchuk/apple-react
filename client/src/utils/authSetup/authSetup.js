@@ -13,14 +13,12 @@ export const useAuth = () => {
         localStorage.setItem(storageName, JSON.stringify({
             userId: id, token: jwtToken
         }))
-        console.log("ur login")
     }, [])
 
     const logout = useCallback( () => {
         setToken(null)
         setUserId(null)
         localStorage.removeItem(storageName)
-        console.log("ur logout")
     }, [])
 
     useEffect( () => {

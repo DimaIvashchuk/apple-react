@@ -4,6 +4,8 @@ import {useRoutes} from '../routes'
 import {AuthContext} from '../utils/authSetup/authSetup.context'
 import {useAuth} from '../utils/authSetup/authSetup'
 
+import './app.scss'
+
 function App() {
   const {token, userId, login, logout} = useAuth()
   const isAuthenticated = !!token
@@ -13,7 +15,7 @@ function App() {
       token, userId, login, logout, isAuthenticated
     }}>
       <BrowserRouter>
-      <div>
+      <div className="app">
         {routes}
       </div>
     </BrowserRouter>
