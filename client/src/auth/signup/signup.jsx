@@ -18,7 +18,12 @@ export const Signup = props => {
                     name="password"
                     onChange={props.inputHandler} 
                 />
-                <button onClick={props.registerHandler}>signup</button>
+                <button 
+                    onClick={props.registerHandler}
+                    disabled={props.loading}
+                >
+                    signup
+                </button>
             </div>
         </div>
     )

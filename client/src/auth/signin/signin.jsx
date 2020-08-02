@@ -19,7 +19,12 @@ export const Signin = props => {
                     name="password"
                     onChange={props.inputHandler} 
                 />
-                <button onClick={props.loginHandler}>signin</button>
+                <button 
+                    onClick={props.loginHandler}
+                    disabled={props.loading}
+                >
+                    signin
+                </button>
             </div>
         </div>
     )
