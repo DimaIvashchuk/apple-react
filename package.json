@@ -31,11 +31,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DimaIvashchuk/apple-react.git"
+    "url": "git+https://github.com/DimaIvashchuk/agrus-organizer.git"
   },
   "bugs": {
-    "url": "https://github.com/DimaIvashchuk/apple-react/issues"
+    "url": "https://github.com/DimaIvashchuk/agrus-organizer/issues"
   },
-  "homepage": "https://github.com/DimaIvashchuk/apple-react#readme",
+  "homepage": "https://github.com/DimaIvashchuk/agrus-organizer#readme",
   "description": ""
 }

@@ -4,12 +4,12 @@ import {Home} from '../home/home'
 
 export const Layout = () => {
     return(
-        <div>
+        <>
             <Switch>
                 <Route path='/' exact>
                     <Home />
                 </Route>
             </Switch>
-        </div>
+        </>
     )
 }
