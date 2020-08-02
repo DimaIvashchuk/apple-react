@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './header.scss'
 
-export const Header = () => {
+export const Header = props => {
 
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true)
-    
-    const sidebarHendler = () => setIsSidebarOpen(!isSidebarOpen)
-
-    const display = isSidebarOpen ? 'block' : 'none' 
-
+    console.log(props)
 
     return (
         <div className='header'>
-            <div className="header_logo" style={{display: display}}>
+            <div className="header_logo" style={{display: props.displayStyle}}>
                 Agrus
             </div>
             <div className="header_left">
-                <div className="header_left-menu" onClick={sidebarHendler}>
+                <div className="header_left-menu" onClick={props.sidebarHandler}>
                     <i className="fa fa-bars" aria-hidden="true"></i>
                 </div>
                 <div className="header_left_nav">
