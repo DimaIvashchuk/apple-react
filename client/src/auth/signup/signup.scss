@@ -1,0 +1,140 @@
+@import '../../shared/assets/scss/fonts.scss';
+
+.signupholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(122,67,251);
+    background: linear-gradient(90deg, rgba(122,67,251,1) 0%, rgba(168,25,167,1) 50%, rgba(218,125,245,1) 100%);
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:100vh;
+    
+
+    &__form {
+        width: auto;
+        height: auto;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        
+        &-tittle {
+            color: Black;
+            text-align: center;
+            font-family:Poppins-medium;
+            font-size: 30px;
+            margin:40px;
+        }
+
+        &-submit {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            border: none;
+            background: rgb(122,67,251);
+            background: linear-gradient(90deg, rgba(122,67,251,1) 0%, rgba(168,25,167,1) 50%, rgba(218,125,245,1) 100%);
+            color: white;
+            font-family:Arial, Helvetica, sans-serif, bold;
+            font-size: 16px;
+            width:325px;
+            height:35px;
+        }
+
+        &-inpwrapp {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 2px solid gray;
+            margin: 30px;
+            margin-top: 20px;
+            margin-bottom:20px;
+            padding-bottom: 5px;
+            &-inp {
+                width:300px;
+                height:20px;
+                border: none;
+                text-align: left;
+            }
+            
+            &-inp {
+                color: black;
+                font-family: Poppins-medium;
+                font-size: 15px;
+            }
+
+            &-inp::placeholder {
+                text-align: left;
+                font-family: Poppins-medium;
+                color: gray;
+                font-size: 15px;
+            }
+
+            &-inp:focus {
+                outline: none;
+            }
+        }
+
+        &-orsentence {
+            font-family: Poppins-medium;
+            color: gray;
+        }
+
+        &-othersignup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            
+            width:300px;
+            height:50px;
+            padding:0px;
+        }
+    }
+}
+
+.other {
+    margin: 10px;
+    color: blue;
+    font-size: 40px;
+}
+
+.passicon {
+    color:gray;
+    font-size: 24px;
+    margin-right: 13px;
+}
+
+.usericon {
+    color:gray;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.emailicon {
+    color:gray;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.fa-github {
+    color: rgb(36, 41, 46);
+}
+
+.fa-telegram {
+    color: rgb(34, 153, 213);
+}
+
+.fa-twitter-square {
+    color: rgb(29, 161, 242);
+}
+
+.fa-steam-square {
+    color: rgb(3, 23, 73);
+}
+
+.fa-facebook-square {
+    color: rgb(66, 103, 178);
+}
