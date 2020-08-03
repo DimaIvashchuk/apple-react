@@ -42,18 +42,16 @@ export const Auth = () => {
     }
 
     return(
-        <div>
-            <Switch>
-                {auth.isAuthenticated ? <Redirect to="/" /> : null}
-                <Route path="/signin" exact >
-                    <Signin inputHandler={inputHandler} loginHandler={loginHandler} loading={loading}/>
-                </Route>
-                <Route path="/signup" exact >
-                    <Signup inputHandler={inputHandler} registerHandler={registerHandler} loading={loading}/>
-                </Route>
-                <Redirect to="/" />
-            </Switch>
-        </div>
+        <Switch>
+            {auth.isAuthenticated ? <Redirect to="/" /> : null}
+            <Route path="/signin" exact >
+                <Signin inputHandler={inputHandler} loginHandler={loginHandler} loading={loading}/>
+            </Route>
+            <Route path="/signup" exact >
+                <Signup inputHandler={inputHandler} registerHandler={registerHandler} loading={loading}/>
+            </Route>
+            <Redirect to="/" />
+        </Switch>
     )
     
 }
