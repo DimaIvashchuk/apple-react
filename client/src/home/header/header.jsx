@@ -1,10 +1,14 @@
 import React from 'react'
 
 import './header.scss'
+import { ProfileMenu } from './profileMenu/profileMenu'
+import { useState } from 'react'
 
 export const Header = props => {
 
-    console.log(props)
+    const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
+
+    const profileMenuHandler = () => setIsProfileMenuOpen(!isProfileMenuOpen)
 
     return (
         <div className='header'>
@@ -61,7 +65,8 @@ export const Header = props => {
                     <i className="fa fa-question-circle-o fa-spin" aria-hidden="true"></i>
                 </div>
                 <div className="header_right-profile">
-                    <i className="fa fa-user" aria-hidden="true"></i>
+                    <ProfileMenu isProfileMenuOpen={isProfileMenuOpen}/>
+                    <i className="fa fa-user" aria-hidden="true" onClick={profileMenuHandler}></i>
                 </div>
             </div>
         </div>
