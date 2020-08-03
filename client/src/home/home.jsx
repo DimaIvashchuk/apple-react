@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 
-import { AuthContext } from '../utils/authSetup/authSetup.context'
 import { Header } from './header/header'
 import { Sidebar } from './sidebar/sidebar'
 import { Main } from './main/main'
@@ -11,7 +10,6 @@ import { Footer } from './footer/footer'
 
 
 export const Home = () => {
-    const auth = useContext(AuthContext)
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(true)
     
