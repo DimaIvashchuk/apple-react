@@ -1,10 +1,9 @@
 import React from 'react'
 
 import './header.scss'
+import { ProfileMenu } from './profileMenu/profileMenu'
 
 export const Header = props => {
-
-    console.log(props)
 
     return (
         <div className='header'>
@@ -61,7 +60,9 @@ export const Header = props => {
                     <i className="fa fa-question-circle-o fa-spin" aria-hidden="true"></i>
                 </div>
                 <div className="header_right-profile">
+                    <ProfileMenu />
                     <i className="fa fa-user" aria-hidden="true"></i>
+                    
                 </div>
             </div>
         </div>
