@@ -7,6 +7,7 @@ import { Signup } from './signup/signup'
 import { AuthContext } from '../utils/authSetup/authSetup.context'
 
 import './auth.scss'
+import { authError } from '../error/auth/auth.error'
 
 export const Auth = () => {
 
@@ -15,10 +16,13 @@ export const Auth = () => {
 
     const [form, setForm] = useState({
         email:'',
-        password:''
+        password:'',
+        rpassword:'',
+        nickname: ''
     })
 
     useEffect(() => {
+        authError(error)
         clearError()
     }, [error, clearError])
     
@@ -30,7 +34,7 @@ export const Auth = () => {
             const data = await request('/api/auth/login', 'POST', {...form})
             auth.login(data.token, data.userId)
             
-        } catch (error) {}
+        } catch (e) {}
     }
 
     const loginHandler = async () => {
@@ -38,19 +42,18 @@ export const Auth = () => {
             const data = await request('/api/auth/login', 'POST', {...form})
             auth.login(data.token, data.userId)
             
-        } catch (error) {}
+        } catch (e) {}
     }
 
     return(
         <Switch>
             {auth.isAuthenticated ? <Redirect to="/" /> : null}
-            <Route path="/signin" exact >
+            <Route path="/signin" >
                 <Signin inputHandler={inputHandler} loginHandler={loginHandler} loading={loading}/>
             </Route>
-            <Route path="/signup" exact >
-                <Signup inputHandler={inputHandler} registerHandler={registerHandler} loading={loading}/>
+            <Route path="/signup" >
+                <Signup inputHandler={inputHandler} registerHandler={registerHandler} loading={loading} />
             </Route>
-            <Redirect to="/" />
         </Switch>
     )
     

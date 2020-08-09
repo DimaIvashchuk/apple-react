@@ -3,9 +3,14 @@ import React from 'react'
 import './sidebar.scss'
 
 export const Sidebar = props => {
+    const displayStyle = props.isSidebarOpen ? 'block' : 'none'
+
     return (
-        <div className="sidebar" style={{display: props.displayStyle}}>
-            <input className="sidebar__input" type="text" placeholder="Search..." id="search" />
+        <div className="sidebar" style={{display: displayStyle}}>
+            <div className="sidebar__input">
+                <i className="fa fa-search" aria-hidden="true"></i>
+                <input className="sidebar__input-place" type="text" placeholder="Search..." id="search" />
+            </div>
             <div className="sidebar__project">
                 Lola
                 <div className="sidebar__project-task">

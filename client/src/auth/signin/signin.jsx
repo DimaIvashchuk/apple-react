@@ -1,16 +1,13 @@
 import React from 'react'
-import './signin.scss'
 
 export const Signin = props => {
 
     return (
         <div className="signupholder">
-            
             <div className="signupholder__form">
-            
-                <div className="signupholder__form-tittle">Sign Up</div>
+                <div className="signupholder__form-tittle">Sign In</div>
                     <div className="signupholder__form-inpwrapp">
-                        <i class="fa fa-envelope-open emailicon" aria-hidden="true"></i>
+                        <i className="fa fa-envelope-open emailicon" aria-hidden="true"></i>
                         <input
                             className="signupholder__form-inpwrapp-inp" 
                             type="text" 
@@ -21,7 +18,7 @@ export const Signin = props => {
                         />
                     </div>
                     <div className="signupholder__form-inpwrapp">
-                        <i class="fa fa-lock passicon" aria-hidden="true"></i>
+                        <i className="fa fa-lock passicon" aria-hidden="true"></i>
                         <input
                             className="signupholder__form-inpwrapp-inp"  
                             type="password" 
@@ -42,11 +39,11 @@ export const Signin = props => {
                         or sign in with
                     </div>
                     <div className="signupholder__form-othersignup">
-                        <i class="fa fa-github other" aria-hidden="true"></i>
-                        <i class="fa fa-telegram other" aria-hidden="true"></i>
-                        <i class="fa fa-twitter-square other" aria-hidden="true"></i>
-                        <i class="fa fa-steam-square other" aria-hidden="true"></i>
-                        <i class="fa fa-facebook-square other" aria-hidden="true"></i>
+                        <i className="fa fa-github other" aria-hidden="true"></i>
+                        <i className="fa fa-telegram other" aria-hidden="true"></i>
+                        <i className="fa fa-twitter-square other" aria-hidden="true"></i>
+                        <i className="fa fa-steam-square other" aria-hidden="true"></i>
+                        <i className="fa fa-facebook-square other" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>

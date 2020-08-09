@@ -6,7 +6,7 @@ export const Layout = () => {
     return(
         <>
             <Switch>
-                <Route path='/' exact>
+                <Route path='/'>
                     <Home />
                 </Route>
             </Switch>

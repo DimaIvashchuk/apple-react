@@ -15,14 +15,11 @@ export const Home = () => {
     
     const sidebarHandler = () => setIsSidebarOpen(!isSidebarOpen)
 
-    const displayStyle = isSidebarOpen ? 'block' : 'none'
-    
-
     return(
         <div className="home">
-            <Header sidebarHandler={sidebarHandler} displayStyle={displayStyle} />
+            <Header sidebarHandler={sidebarHandler} isSidebarOpen={isSidebarOpen} />
             <div style={{display: 'flex', height: "calc(100vh - 95px)"}}>
-                <Sidebar displayStyle={displayStyle}/>
+                <Sidebar isSidebarOpen={isSidebarOpen}/>
                 <Main />
             </div>
             <Footer />

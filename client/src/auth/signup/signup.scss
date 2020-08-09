@@ -2,14 +2,15 @@
 
 .signupholder {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(122,67,251);
-    background: linear-gradient(90deg, rgba(122,67,251,1) 0%, rgba(168,25,167,1) 50%, rgba(218,125,245,1) 100%);
-    margin:0px;
-    padding:0px;
     width:100%;
     height:100vh;
+    align-items: center;
+    justify-content: center;
+    margin:0px;
+    padding:0px;
+    background: rgb(0,195,173);
+    background: linear-gradient(90deg, rgba(0,195,173,1) 0%, rgba(37,162,53,1) 100%);
+    font-family: Gilroy;
     
 
     &__form {
@@ -25,7 +26,7 @@
         &-tittle {
             color: Black;
             text-align: center;
-            font-family:Poppins-medium;
+            
             font-size: 30px;
             margin:40px;
         }
@@ -35,8 +36,8 @@
             margin-bottom: 20px;
             border-radius: 50px;
             border: none;
-            background: rgb(122,67,251);
-            background: linear-gradient(90deg, rgba(122,67,251,1) 0%, rgba(168,25,167,1) 50%, rgba(218,125,245,1) 100%);
+            background: rgb(0,195,173);
+            background: linear-gradient(90deg, rgba(0,195,173,1) 0%, rgba(37,162,53,1) 100%);
             color: white;
             font-family:Arial, Helvetica, sans-serif, bold;
             font-size: 16px;
@@ -61,13 +62,13 @@
             
             &-inp {
                 color: black;
-                font-family: Poppins-medium;
+                
                 font-size: 15px;
             }
 
             &-inp::placeholder {
                 text-align: left;
-                font-family: Poppins-medium;
+                
                 color: gray;
                 font-size: 15px;
             }
@@ -78,7 +79,7 @@
         }
 
         &-orsentence {
-            font-family: Poppins-medium;
+            
             color: gray;
         }
 

@@ -2,7 +2,7 @@ const {Router} = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
-const {check, validationResult} = require('express-validator')
+const {check, validationResult, body} = require('express-validator')
 const User = require('../models/User')
 const router = Router()
 
@@ -11,8 +11,13 @@ router.post(
     '/register',
     [
         check('email', 'bad email').isEmail(),
-        check('password', 'less then 6 characters')
-         .isLength({ min: 6 })
+        check('password', 'less then 6 characters').isLength({ min: 6 }),
+        body('rpassword').custom((value, { req }) => {
+            if (value !== req.body.password) 
+              throw new Error('Password confirmation does not match password');
+            
+            return true;
+          })
     ],
     async (req, res) => {
     try {
@@ -26,7 +31,7 @@ router.post(
             })
         }
         
-        const {email, password} = req.body
+        const {email, password, nickname} = req.body
 
         const candidate = await User.findOne({ email })
 
@@ -35,7 +40,7 @@ router.post(
         }
 
         const hashedPassword = await bcrypt.hash(password, 12)
-        const user = new User({ email, password: hashedPassword })
+        const user = new User({ email, password: hashedPassword, nickname })
 
         await user.save()
         
@@ -92,5 +97,6 @@ router.post(
         res.status(500).json({message: "something went wrong while log in"})
     }
 })
+
 
 module.exports = router
